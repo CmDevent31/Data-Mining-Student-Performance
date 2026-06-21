@@ -14,8 +14,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 with open(os.path.join(BASE_DIR, 'logreg_model.pkl'), 'rb') as f:
     model = pickle.load(f)
 
-mm_scaler    = joblib.load('mm_scaler.pkl')
-model_cols   = joblib.load('model_columns.pkl')
+logreg_model = joblib.load(os.path.join(BASE_DIR, 'logreg_model.pkl'))
+mm_scaler    = joblib.load(os.path.join(BASE_DIR, 'mm_scaler.pkl'))
+# ... mungkin masih ada: nb_model, std_scaler, label_encoder, dll
 
 # ── Konstanta (harus konsisten dengan notebook) ───────────────────
 NUM_COLS = [
