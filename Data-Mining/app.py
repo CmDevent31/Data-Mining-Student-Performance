@@ -64,7 +64,7 @@ FEATURE_LABELS = {
 # ── Load & prep data untuk metrik evaluasi ────────────────────────
 @st.cache_data
 def load_eval_data():
-    df_raw = pd.read_csv('student_performance_data.csv')
+    df_raw = pd.read_csv(os.path.join(BASE_DIR, 'student_performance_data.csv'))
     df = df_raw.drop(columns=['student_id'])
 
     # Outlier handling (IQR) — sama persis dengan notebook
