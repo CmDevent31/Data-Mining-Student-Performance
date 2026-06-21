@@ -7,9 +7,11 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, roc_c
 from sklearn.preprocessing import label_binarize
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # ── Load artifacts ────────────────────────────────────────────────
-with open('logreg_model.pkl', 'rb') as f:
+with open(os.path.join(BASE_DIR, 'logreg_model.pkl'), 'rb') as f:
     model = pickle.load(f)
 
 mm_scaler    = joblib.load('mm_scaler.pkl')
